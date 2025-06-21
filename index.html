@@ -1,90 +1,174 @@
-# Создание улучшенного HTML-файла с улучшениями, предложенными выше
-
-html_content = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labubu Coin</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Labubu Coin — мем-токен на BNB Chain</title>
 
-    <!-- OpenGraph + Twitter preview -->
-    <meta property="og:title" content="Labubu Coin">
-    <meta property="og:description" content="Labubu — мем-токен на BNB Chain. TikTok дух и пушистое безумие!">
-    <meta property="og:image" content="https://your-site.com/labubu_logo.png">
-    <meta property="og:url" content="https://your-site.com">
-    <meta name="twitter:card" content="summary_large_image">
+    <!-- SEO и OpenGraph -->
+    <meta name="description" content="Labubu — мем-токен на BNB Chain. TikTok дух и пушистое безумие! Купить LABU на PancakeSwap." />
+    <meta name="keywords" content="Labubu, LABU, мем токен, BNB Chain, PancakeSwap, купить токен" />
+    <meta name="author" content="Labubu Team" />
+    <meta property="og:title" content="Labubu Coin — мем-токен на BNB Chain" />
+    <meta property="og:description" content="Labubu — мем-токен на BNB Chain. TikTok дух и пушистое безумие!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-site.com" />
+    <meta property="og:image" content="https://your-site.com/labubu_logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-    <style>
-        body {
-            background-color: #0e0e0e;
-            font-family: Arial, sans-serif;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-        .logo {
-            max-width: 300px;
-            margin-top: 40px;
-        }
-        .btn {
-            background-color: #f39c12;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2em;
-            border-radius: 10px;
-            margin: 10px;
-            display: inline-block;
-            transition: 0.2s ease;
-        }
-        .btn:hover {
-            background-color: #e67e22;
-            transform: scale(1.05);
-        }
-        .contract {
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #aaa;
-        }
-        @media (max-width: 600px) {
-            .logo {
-                max-width: 200px;
-            }
-            .btn {
-                font-size: 1em;
-                padding: 12px 24px;
-            }
-        }
-    </style>
+    <style>
+        body {
+            background-color: #0e0e0e;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .logo {
+            max-width: 300px;
+            margin-top: 40px;
+        }
+        .btn {
+            background-color: #f39c12;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 10px;
+            margin: 10px;
+            display: inline-block;
+            transition: 0.2s ease;
+        }
+        .btn:hover {
+            background-color: #e67e22;
+            transform: scale(1.05);
+        }
+        .btn-twitter {
+            background-color: #1da1f2;
+        }
+        .btn-telegram {
+            background-color: #0088cc;
+        }
+        .contract {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+        #token-price {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 25px 0;
+            color: #f0b90b;
+        }
+        section.info-block {
+            margin: 30px auto;
+            max-width: 600px;
+            text-align: left;
+   }
+        section.info-block h2,
+        section.info-block h3 {
+            color: #f0b90b;
+        }
+        section.info-block ul {
+            list-style: disc inside;
+        }
+        section.info-block a {
+            color: #f39c12;
+            text-decoration: none;
+        }
+        section.info-block a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .logo {
+                max-width: 200px;
+            }
+            .btn {
+                font-size: 1em;
+                padding: 12px 24px;
+            }
+            section.info-block {
+                padding: 0 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <img src="labubu_logo.png" alt="Labubu Coin Logo" class="logo">
-    <h1>Labubu Coin</h1>
-    <p>Labubu Coin — это мем, хаос и любовь!<br>Прямо из TikTok в ваш кошелёк.<br>Присоединяйся к армии пушистого безумия!</p>
+    <img src="labubu_logo.png" alt="Labubu Coin Logo" class="logo" />
+    <h1>Labubu Coin</h1>
+    <p>Labubu Coin — это мем, хаос и любовь!<br />Прямо из TikTok в ваш кошелёк.<br />Присоединяйся к армии пушистого безумия!</p>
 
-    <a href="https://pancakeswap.finance/swap?outputCurrency=0x8A4f0d9AdFADEd5035d64a8DfF6025307A216012" class="btn" target="_blank">
-        Купить на PancakeSwap
-    </a>
+    <!-- Динамическая цена -->
+    <div id="token-price">Загрузка цены LABU...</div>
 
-    <a href="https://t.me/labubucoin" class="btn" style="background-color: #0088cc;" target="_blank">
-        Telegram
-    </a>
+    <!-- Кнопки -->
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0x8A4f0d9AdFADEd5035d64a8DfF6025307A216012" class="btn" target="_blank" rel="noopener noreferrer">
+        Купить на PancakeSwap
+    </a>
+    <a href="https://t.me/labubucoin" class="btn btn-telegram" target="_blank" rel="noopener noreferrer">
+        Telegram
+    </a>
+    <a href="https://twitter.com/labubucoin" class="btn btn-twitter" target="_blank" rel="noopener noreferrer">
+        Twitter
+    </a>
 
-    <a href="https://twitter.com/labubucoin" class="btn" style="background-color: #1da1f2;" target="_blank">
-        Twitter
-    </a>
+    <div class="contract">
+        <p>Contract Address:</p>
+        <code>0x8A4f0d9AdFADEd5035d64a8DfF6025307A216012</code>
+    </div>
 
-    <div class="contract">
-        <p>Contract Address:</p>
-        <code>0x8A4f0d9AdFADEd5035d64a8DfF6025307A216012</code>
-    </div>
+    <!-- Информационный блок -->
+    <section class="info-block">
+        <h2>О токене Labubu (LABU)</h2>
+        <p>Labubu — мем-токен на BNB Smart Chain, созданный для сообщества TikTok. Наш токен — это весело, легко и с потенциалом роста!</p>
+
+        <h3>Дорожная карта</h3>
+        <ul>
+            <li>Q2 2025 — Запуск токена и сайта</li>
+            <li>Q3 2025 — Листинг на PancakeSwap, первые промо-акции</li>
+            <li>Q4 2025 — Расширение сообщества, интеграция с NFT</li>
+        </ul>
+
+        <h3>Соцсети</h3>
+        <p>
+            <a href="https://twitter.com/labubucoin" target="_blank" rel="noopener noreferrer">Twitter</a> |
+            <a href="https://t.me/labubucoin" target="_blank" rel="noopener noreferrer">Telegram</a> |
+            <a href="https://instagram.com/labubucoin" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </p>
+    </section>
+
+    <!-- Скрипт динамического обновления цены -->
+    <script>
+        async function fetchTokenPrice() {
+            const tokenAddress = "0x8A4f0d9AdFADEd5035d64a8DfF6025307A216012";
+            try {
+                const response = await fetch(`https://api.pancakeswap.info/api/v2/tokens/${tokenAddress}`);
+                const data = await response.json();
+
+                if(data && data.data) {
+                    const priceBnb = parseFloat(data.data.price);
+                    // Получаем курс BNB к USD
+                    const bnbResponse = await fetch("https://api.binance.com/api/v3/ticker/price?symbol=BNBUSDT");
+                    const bnbData = await bnbResponse.json();
+                    const bnbUsdPrice = parseFloat(bnbData.price);
+
+                    const priceUsd = priceBnb * bnbUsdPrice;
+
+                    document.getElementById("token-price").innerHTML = `
+                        Цена LABU: ${priceBnb.toFixed(8)} BNB (~$${priceUsd.toFixed(4)} USD)
+                    `;
+                } else {
+                    document.getElementById("token-price").textContent = "Не удалось получить цену LABU.";
+                }
+            } catch (error) {
+                document.getElementById("token-price").textContent = "Ошибка при загрузке цены.";
+                console.error(error);
+            }
+        }
+
+        // Запускаем при загрузке и обновляем каждую минуту
+        fetchTokenPrice();
+        setInterval(fetchTokenPrice, 60000);
+    </script>
 </body>
 </html>
-'''
-
-# Сохраняем HTML-файл
-html_file_path = "/mnt/data/index.html"
-with open(html_file_path, "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-html_file_path
