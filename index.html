@@ -1,51 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
+# Создание улучшенного HTML-файла с улучшениями, предложенными выше
+
+html_content = '''<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labubu Coin</title>
-    <style>
-        body {
-            background-color: #0e0e0e;
-            font-family: Arial, sans-serif;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-        .logo {
-            max-width: 300px;
-            margin-top: 40px;
-        }
-        .btn {
-            background-color: #f39c12;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2em;
-            border-radius: 10px;
-            margin-top: 30px;
-            display: inline-block;
-        }
-        .contract {
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #aaa;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labubu Coin</title>
+
+    <!-- OpenGraph + Twitter preview -->
+    <meta property="og:title" content="Labubu Coin">
+    <meta property="og:description" content="Labubu — мем-токен на BNB Chain. TikTok дух и пушистое безумие!">
+    <meta property="og:image" content="https://your-site.com/labubu_logo.png">
+    <meta property="og:url" content="https://your-site.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        body {
+            background-color: #0e0e0e;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .logo {
+            max-width: 300px;
+            margin-top: 40px;
+        }
+        .btn {
+            background-color: #f39c12;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 10px;
+            margin: 10px;
+            display: inline-block;
+            transition: 0.2s ease;
+        }
+        .btn:hover {
+            background-color: #e67e22;
+            transform: scale(1.05);
+        }
+        .contract {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+        @media (max-width: 600px) {
+            .logo {
+                max-width: 200px;
+            }
+            .btn {
+                font-size: 1em;
+                padding: 12px 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <img src="labubu_logo.png" alt="Labubu Coin Logo" class="logo">
-    <h1>Labubu Coin</h1>
-    <p>Labubu Coin — это мем, хаос и любовь!<br>Прямо из TikTok в ваш кошелёк.<br>Присоединяйся к армии пушистого безумия!</p>
+    <img src="labubu_logo.png" alt="Labubu Coin Logo" class="logo">
+    <h1>Labubu Coin</h1>
+    <p>Labubu Coin — это мем, хаос и любовь!<br>Прямо из TikTok в ваш кошелёк.<br>Присоединяйся к армии пушистого безумия!</p>
 
-    <!-- ✅ Исправленная ссылка на PancakeSwap -->
-    <a href="https://pancakeswap.finance/swap?outputCurrency=0x8A4f0d9AdFADEd5035d64a8DfF6025307A216012" class="btn" target="_blank">
-        Купить на PancakeSwap
-    </a>
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0x8A4f0d9AdFADEd5035d64a8DfF6025307A216012" class="btn" target="_blank">
+        Купить на PancakeSwap
+    </a>
 
-    <div class="contract">
-        <p>Contract Address:</p>
-        <code>0x8A4f0d9AdFADEd5035d64a8DfF6025307A216012</code>
-    </div>
+    <a href="https://t.me/labubucoin" class="btn" style="background-color: #0088cc;" target="_blank">
+        Telegram
+    </a>
+
+    <a href="https://twitter.com/labubucoin" class="btn" style="background-color: #1da1f2;" target="_blank">
+        Twitter
+    </a>
+
+    <div class="contract">
+        <p>Contract Address:</p>
+        <code>0x8A4f0d9AdFADEd5035d64a8DfF6025307A216012</code>
+    </div>
 </body>
 </html>
+'''
+
+# Сохраняем HTML-файл
+html_file_path = "/mnt/data/index.html"
+with open(html_file_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+html_file_path
